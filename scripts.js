@@ -1,7 +1,7 @@
 
 function newItem(){
 
-//javascript to jQuery
+//jQuery
 //Adding a new item to the list of items: 
     let li = $('<li></li>');
     let inputValue = $('#input').val();
@@ -34,7 +34,7 @@ function newItem(){
         li.addClass("delete")
     }
 
- // 4. Reordering the items: 
+//Reordering the items: 
    $('#list').sortable();
 
 }

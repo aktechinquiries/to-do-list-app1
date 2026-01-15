@@ -8,11 +8,11 @@ function newItem(){
     li.append(inputValue);
 
 //Warning message for user about a blank input field:
-if (inputValue === '') {
-    alert("This field cannot be left blank. You must write something!");
-} else {
-    $('#list').append(li);
-}
+    if (inputValue === '') {
+        alert("This field cannot be left blank. You must write something!");
+    } else {
+        $('#list').append(li);
+    }
 
  //2. Crossing out an item from the list of items:
    function crossOut() {

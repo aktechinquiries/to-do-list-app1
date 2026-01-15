@@ -1,5 +1,42 @@
 
 function newItem(){
+    //Adding a new item to the list of items:
+    let li = $('<li></li>');
+    let inputValue = $('#input').val();
+    li.append(inputValue);
+
+    //Warning message for user about a blank input field:
+    if (inputValue === '') {
+        alert("This field cannot be left blank. You must write something!");
+    } else {
+        $('#list').append(li);
+    }
+
+    //Crossing out an item from the list of items:
+    function crossOut() {
+        li.toggleClass("strike");
+    }
+
+    li.on("dblclick", function crossOut() {
+        li.toggleClass("strike");
+    });
+
+    //Adding a "X" delete button for the list of items
+    let crossOutButton = $('<crossOutButton></crossOutButton>');
+    crossOutButton.append(document.createTextNode('X'));
+    li.append(crossOutButton);
+
+    //Making the "X" delete button functional
+    crossOutButton.on("click", deleteListItem);
+    function deleteListItem(){
+ 		li.addClass("delete")
+ 	}
+
+    //Making the list functional by adding a "drag-to-reorder" sortable feature
+    $('#list').sortable();
+}
+
+
 
     //javascript
     //1. Adding a new item to the list of items: 

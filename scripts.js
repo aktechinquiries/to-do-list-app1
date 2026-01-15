@@ -1,19 +1,18 @@
 
 function newItem(){
 
-//javascript to JQuery
+//javascript to jQuery
 //Adding a new item to the list of items: 
     let li = $('<li></li>');
     let inputValue = $('#input').val();
     li.append(inputValue);
 
-
-   if (inputValue === '') {
-     alert("You must write something!");
-   } else {
-     let list = document.querySelector('#list');
-     list.appendChild(li);
-   }
+//Warning message for user about a blank input field:
+if (inputValue === '') {
+    alert("This field cannot be left blank. You must write something!");
+} else {
+    $('#list').append(li);
+}
 
  //2. Crossing out an item from the list of items:
    function crossOut() {
